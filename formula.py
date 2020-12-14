@@ -8,7 +8,7 @@ with open('formulas.txt', mode='r', encoding="utf-8") as file:
 
 isExit = True
 while isExit:
-    user_input = input('Please Enter Geometrical Keyword whose formula you want? ')
+    user_input = input('What formula do you need? ')
     results = []
     isFound = False
     for i in range(len(formulas)):
@@ -39,7 +39,7 @@ while isExit:
             # print(str(formulas[i]))
             isFound = True
     if not isFound:
-        print("Sorry, I dont know the formula of", user_input)
+        print("Sorry, I dont know the formula for", user_input)
         value = input('Press V to store its formula, or Press any other character to escape: ')
         if value[0].lower()=='v':
             value = input('Enter formula for '+ user_input+": ")
@@ -54,9 +54,9 @@ while isExit:
                     readfile = file.readlines()
                     for f in readfile:
                         formulas.append(f)
-                print('Thanks for Saving!!!')
+                print('Thank you for saving!!!')
             except:
-                print('Sorry, Cannot be saved')
+                print('Sorry, it cannot be saved')
 
     elif len(results)>1:
         print("####- I HAVE FOUND MORE THAN 1 RESULTS, PLEASE ENTER SPECIFIC ONE -#### ")
